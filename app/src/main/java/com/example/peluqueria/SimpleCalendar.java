@@ -18,7 +18,7 @@ import java.util.Calendar;
 
 public class SimpleCalendar extends LinearLayout {
 
-    //Hola Senjuto
+    //aalarcon
 
     private static final String CUSTOM_GREY = "#a0a0a0";
     private static final String[] ENG_MONTH_NAMES = {"January", "February", "March", "April",
