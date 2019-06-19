@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.peluqueria.Calendar_prueba;
 import com.example.peluqueria.R;
@@ -25,7 +26,7 @@ public class MenuFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Button button, butcalendar;
+    private TextView button, butcalendar, butgaleria;
 
     //private OnFragmentInteractionListener mListener;
 
@@ -53,9 +54,6 @@ public class MenuFragment extends Fragment {
         }
         System.out.println("Saludos desde el fragment");
 
-
-
-
     }
 
     @Override
@@ -72,8 +70,9 @@ public class MenuFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        button = (Button) view.findViewById(R.id.fragment);
-        butcalendar = (Button) view.findViewById(R.id.calendarcheck);
+        button = (TextView) view.findViewById(R.id.fragment);
+        butcalendar = (TextView) view.findViewById(R.id.calendarcheck);
+        butgaleria = (TextView) view.findViewById(R.id.galerias);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +81,14 @@ public class MenuFragment extends Fragment {
                 displayFragment3();
             }
         });
+        butgaleria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("HOLA");
+                displayFragment4();
+            }
+        });
+
         butcalendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +97,14 @@ public class MenuFragment extends Fragment {
 
             }
         });
+        /*butgaleria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getActivity(),CalendarFragment.class);
+                startActivity(intent2);
+
+            }
+        });*/
 
     }
 
@@ -106,6 +121,21 @@ public class MenuFragment extends Fragment {
         fragmentTransaction.addToBackStack("HECHO2").commit();
 
     }
+
+    public void displayFragment4() {
+
+        CalendarFragment fragment2 = CalendarFragment.newInstance();
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager
+                .beginTransaction();
+
+
+        fragmentTransaction.replace(R.id.container1, fragment2);//Este es el contenedor donde reemplazo los fragmentos
+        System.out.println("ADIOS");
+        fragmentTransaction.addToBackStack("HECHO2").commit();
+
+    }
+
 
 
 

@@ -35,6 +35,7 @@ public class SimpleCalendar extends LinearLayout {
     LinearLayout weekFourLayout;
     LinearLayout weekFiveLayout;
     LinearLayout weekSixLayout;
+    LinearLayout weekSevenLayout;
     private LinearLayout[] weeks;
 
     private int currentDateDay, chosenDateDay, currentDateMonth,
@@ -82,6 +83,7 @@ public class SimpleCalendar extends LinearLayout {
         weekFourLayout = (LinearLayout) view.findViewById(R.id.calendar_week_4);
         weekFiveLayout = (LinearLayout) view.findViewById(R.id.calendar_week_5);
         weekSixLayout = (LinearLayout) view.findViewById(R.id.calendar_week_6);
+        weekSevenLayout = (LinearLayout) view.findViewById(R.id.calendar_week_7);
         currentDate = (TextView) view.findViewById(R.id.current_date);
         currentMonth = (TextView) view.findViewById(R.id.current_month);
 
@@ -111,8 +113,8 @@ public class SimpleCalendar extends LinearLayout {
     }
 
     private void initializeDaysWeeks() {
-        weeks = new LinearLayout[6];
-        days = new Button[6 * 7];
+        weeks = new LinearLayout[7];
+        days = new Button[7 * 7];
 
         weeks[0] = weekOneLayout;
         weeks[1] = weekTwoLayout;
@@ -120,6 +122,7 @@ public class SimpleCalendar extends LinearLayout {
         weeks[3] = weekFourLayout;
         weeks[4] = weekFiveLayout;
         weeks[5] = weekSixLayout;
+        weeks[6] = weekSevenLayout;
     }
 
     private void initCalendarWithDate(int year, int month, int day) {
@@ -296,13 +299,13 @@ public class SimpleCalendar extends LinearLayout {
             if (chosenDateYear == currentDateYear
                     && chosenDateMonth == currentDateMonth
                     && pickedDateDay == currentDateDay) {
-                selectedDayButton.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                selectedDayButton.setBackgroundColor(getResources().getColor(R.color.colorSelected));
                 selectedDayButton.setTextColor(Color.WHITE);
             } else {
                 selectedDayButton.setBackgroundColor(Color.TRANSPARENT);
                 if (selectedDayButton.getCurrentTextColor() != Color.RED) {
                     selectedDayButton.setTextColor(getResources()
-                            .getColor(R.color.colorPrimary));
+                            .getColor(R.color.colorSelected));
                 }
             }
         }
@@ -332,7 +335,7 @@ public class SimpleCalendar extends LinearLayout {
                                    DisplayMetrics metrics) {
         int engDaysArrayCounter = 0;
 
-        for (int weekNumber = 0; weekNumber < 6; ++weekNumber) {
+        for (int weekNumber = 0; weekNumber < 7; ++weekNumber) {
             for (int dayInWeek = 0; dayInWeek < 7; ++dayInWeek) {
                 final Button day = new Button(context);
                 day.setTextColor(Color.parseColor(CUSTOM_GREY));

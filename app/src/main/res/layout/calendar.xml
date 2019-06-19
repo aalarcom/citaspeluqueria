@@ -16,7 +16,7 @@
             android:id="@+id/current_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#09ef5d"
+            android:textColor="#273526"
             android:textSize="28sp" />
 
         <TextView
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/fab_margin"
-            android:textColor="#09ef5d"
+            android:textColor="#273526"
             android:textSize="28sp" />
 
     </LinearLayout>
@@ -43,7 +43,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:text="@string/saturday"
-            android:textColor="#09ef5d"
+            android:textColor="#273526"
             android:textSize="16sp" />
 
         <Button
@@ -53,7 +53,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:text="@string/sunday"
-            android:textColor="#09ef5d"
+            android:textColor="#273526"
             android:textSize="16sp" />
 
         <Button
@@ -63,7 +63,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:text="@string/monday"
-            android:textColor="#09ef5d"
+            android:textColor="#273526"
             android:textSize="16sp" />
 
         <Button
@@ -73,7 +73,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:text="@string/tuesday"
-            android:textColor="#09ef5d"
+            android:textColor="#273526"
             android:textSize="16sp" />
 
         <Button
@@ -83,7 +83,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:text="@string/wednesday"
-            android:textColor="#09ef5d"
+            android:textColor="#273526"
             android:textSize="16sp" />
 
         <Button
@@ -93,7 +93,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:text="@string/thursday"
-            android:textColor="#09ef5d"
+            android:textColor="#273526"
             android:textSize="16sp" />
 
         <Button
@@ -103,7 +103,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:text="@string/friday"
-            android:textColor="#09ef5d"
+            android:textColor="#273526"
             android:textSize="16sp" />
 
     </LinearLayout>
@@ -145,6 +145,13 @@
 
     <LinearLayout
         android:id="@+id/calendar_week_6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="7" />
+
+    <LinearLayout
+        android:id="@+id/calendar_week_7"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"

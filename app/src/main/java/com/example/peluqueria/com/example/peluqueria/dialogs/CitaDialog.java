@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.peluqueria.MainActivity;
 import com.example.peluqueria.R;
 import com.example.peluqueria.SimpleCalendar;
 
@@ -86,6 +87,13 @@ public class CitaDialog extends DialogFragment implements SimpleCalendar.DayClic
 
     @Override
     public void onDayClick(View view) {
-        System.out.println("HOLA");
+        System.out.println("HOLA: " + ((int[]) view.getTag() )[0] );
+
+        MainActivity dialogo = new MainActivity();
+
+
+        dialogo.show(getActivity().getSupportFragmentManager(), "1");//getSupportFragmentManager para reconocer los fragmentos
+
+
     }
 }

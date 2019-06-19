@@ -1,7 +1,6 @@
 package com.example.peluqueria.fragmen;
 
-import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,10 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.peluqueria.MainActivity;
+import com.example.peluqueria.ProcesoReservas;
 import com.example.peluqueria.R;
-import com.example.peluqueria.com.example.peluqueria.dialogs.CitaDialog;
 import com.example.peluqueria.com.example.peluqueria.dialogs.RegisterDialog;
-import com.example.peluqueria.com.example.peluqueria.interfaces.OnTaskCompleted;
 
 
 public class Menu2Fragment extends Fragment  {
@@ -78,44 +76,7 @@ public class Menu2Fragment extends Fragment  {
 
         dialogo.show(getActivity().getSupportFragmentManager(),"1");//getSupportFragmentManager para reconocer los fragmentos
 
-//    // TODO: Rename method, update argument and hook method into UI event
-//    public void onButtonPressed(Uri uri) {
-//        if (mListener != null) {
-//            mListener.onFragmentInteraction(uri);
-//        }
-//    }
 
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        if (context instanceof OnFragmentInteractionListener) {
-//            mListener = (OnFragmentInteractionListener) context;
-//        } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
-//        }
-//    }
-//
-//    @Override
-//    public void onDetach() {
-//        super.onDetach();
-//        mListener = null;
-//    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-//    public interface OnFragmentInteractionListener {
-//        // TODO: Update argument type and name
-//        void onFragmentInteraction(Uri uri);
-//    }
 }
     public void openLoginDialog() {
 
@@ -126,14 +87,14 @@ public class Menu2Fragment extends Fragment  {
         dialogo.show(getActivity().getSupportFragmentManager(), "1");//getSupportFragmentManager para reconocer los fragmentos
     }
 
-    public void openCitaDialog() {
+    /*public void openCitaDialog() {
 
         CitaDialog dialogo = new CitaDialog();
 
         System.out.println("dialogo cita creado");
 
         dialogo.show(getActivity().getSupportFragmentManager(), "1");//getSupportFragmentManager para reconocer los fragmentos
-    }
+    }*/
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -166,7 +127,9 @@ public class Menu2Fragment extends Fragment  {
             @Override
             public void onClick(View v) {
                 System.out.println("pulsamos cita");
-                openCitaDialog();
+                //openCitaDialog();
+                Intent intent = new Intent(getActivity(), ProcesoReservas.class);//lanza la clase al pulsar el botón
+                startActivity(intent);
             }
         });
 
